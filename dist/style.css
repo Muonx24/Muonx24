@@ -1,0 +1,268 @@
+/* =======================
+   1. Reset Some Default Styles
+======================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =======================
+   2. Body Styles
+======================= */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* =======================
+   3. Header Styles
+======================= */
+.header {
+    position: relative;
+    background-color: #D2691E; /* เปลี่ยนเป็นสีส้มอิฐ */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* =======================
+   4. Container Styles
+======================= */
+.container {
+    flex: 1;
+    max-width: 930px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================
+   Search Bar Styles
+======================= */
+.search-container {
+    display: flex;
+    justify-content: center; /* จัดกึ่งกลาง */
+    align-items: center; /* จัดกึ่งกลางในแนวตั้ง */
+    margin: 20px 0; /* เพิ่มช่องว่างด้านบนและด้านล่าง */
+    background-image: url('https://i.pinimg.com/736x/f2/b6/1f/f2b61f2d9b3e834afc652ec1c1a4dce7.jpg'); /* ตั้งค่าภาพพื้นหลัง */
+    background-position: center; /* จัดตำแหน่งตรงกลาง */
+    padding: 30px; /* เพิ่ม padding รอบ ๆ ช่องค้นหา */
+    border-radius: 15px; /* ทำมุมมน */
+}
+
+.search-input {
+    width: 30%; /* กว้าง 70% ของความกว้างไซต์ */
+    border-radius: 20px; /* มุมมน เพิ่มขึ้น */
+    padding: 12px; /* ระยะห่างภายใน */
+    border: 1px solid #ccc; /* ขอบ */
+    margin-right: 15px; /* ช่องว่างด้านขวา */
+    background-color: white; /* สีพื้นหลังของ input */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: box-shadow 0.3s ease; /* เพิ่มการเปลี่ยนแปลง */
+}
+
+/* เพิ่มเงาเมื่อ hover */
+.search-input:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* เงาเมื่อ hover */
+}
+
+.genre-select {
+    width: 30%; /* กว้าง 20% ของความกว้างไซต์ */
+    border-radius: 25px; /* มุมมน */
+    padding: 12px; /* ระยะห่างภายใน */
+    border: 1px solid #ccc; /* ขอบ */
+    margin-right: 15px; /* ช่องว่างด้านขวา */
+    background-color: white; /* สีพื้นหลังของ select */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: box-shadow 0.3s ease; /* เพิ่มการเปลี่ยนแปลง */
+}
+
+/* เพิ่มเงาเมื่อ hover */
+.genre-select:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* เงาเมื่อ hover */
+}
+
+.search-button {
+    width: 15%; /* กว้าง 10% ของความกว้างไซต์ */
+    border-radius: 25px; /* มุมมน */
+    padding: 12px; /* ระยะห่างภายใน */
+    background-color: #D2691E; /* สีพื้นหลัง */
+    color: white; /* สีข้อความ */
+    border: none; /* ไม่มีขอบ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อ hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเปลี่ยนแปลง */
+}
+
+/* เปลี่ยนสีเมื่อ hover */
+.search-button:hover {
+    background-color: #c85e1f; /* เปลี่ยนสีเมื่อ hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* เงาเมื่อ hover */
+}
+
+/* =======================
+   6. Book List Styles
+======================= */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.book-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.book-item:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.book-info {
+    font-size: 0.9em;
+}
+
+/* =======================
+   7. Manage Books Styles
+======================= */
+#manage-books-container {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label input {
+    margin-right: 5px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* ปรับการแสดงผลของปุ่ม */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D2691E; /* สีส้มอิฐ */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* เพิ่มสไตล์เมื่อ hover */
+button:hover {
+    background-color: #B55B19; /* ปรับสี hover ให้เข้มขึ้น */
+}
+
+/* =======================
+   8. Footer Styles
+======================= */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #D2691E; /* เปลี่ยนเป็นสีส้มอิฐ */
+    color: white;
+    margin-top: auto;
+}
+
+.contact-me {
+    margin-top: 10px; /* ลดระยะห่างด้านบน */
+    font-size: 0.9em; /* ลดขนาดฟอนต์ */
+}
+
+.contact-me a {
+    color: #FFD700; /* Gold color for email link */
+    text-decoration: none;
+}
+
+.contact-me a:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   9. Nav Bar Styles
+======================= */
+.nav {
+    list-style: none; /* ลบ bullet */
+    padding: 0; /* ลบ padding */
+    margin: 0; /* ลบ margin */
+    display: flex; /* ทำให้ nav bar เป็น flex container */
+    justify-content: flex-start; /* จัดแนวซ้าย */
+    margin-bottom: 20px; /* เพิ่มระยะห่างที่ด้านล่าง */
+}
+
+.nav-pills .nav-link {
+    border-radius: 20px; /* มุมมนที่เท่ากับช่องค้นหา */
+    padding: 10px 15px; /* ปรับขนาด padding ของปุ่ม */
+    transition: background-color 0.3s ease; /* เพิ่ม transition */
+    background-color: #D9D9D9; /* สีปุ่มเริ่มต้น */
+    color: black; /* สีข้อความเริ่มต้น */
+}
+
+/* สไตล์สำหรับลิงก์ที่ถูกเลือก */
+.nav-pills .nav-link.active {
+    background-color: #D2691E; /* เปลี่ยนสีเมื่อ active */
+    color: white; /* เปลี่ยนสีข้อความเมื่อ active */
+}
+
+/* สไตล์เมื่อ hover */
+.nav-pills .nav-link:hover {
+    background-color: #B9B9B9; /* เปลี่ยนสีเมื่อ hover */
+    color: #000; /* เปลี่ยนสีข้อความเมื่อ hover */
+}
